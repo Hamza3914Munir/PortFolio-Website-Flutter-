@@ -190,14 +190,23 @@ class _ProjectsSectionState extends State<ProjectsSection>
           Wrap(
             spacing: isMobile ? 16.0 : assignWidth(context, 0.025),
             runSpacing: isMobile ? assignHeight(context, 0.05) : assignWidth(context, 0.025),
-            children: _buildProjects(Data.offlineProjects, isMobile: isMobile),
+            // Show 3 offline projects per row on web, keep mobile layout unchanged
+            children: _buildProjects(
+              Data.offlineProjects,
+              isMobile: isMobile,
+              itemsPerRow: 3,
+            ),
           ),
         ],
       ),
     );
   }
 
-  List<Widget> _buildProjects(List<ProjectData> data, {bool isMobile = false}) {
+  List<Widget> _buildProjects(
+    List<ProjectData> data, {
+    bool isMobile = false,
+    int itemsPerRow = 2, // default: 2 items per row for web (live projects)
+  }) {
     List<Widget> items = [];
     double screenWidth = widthOfScreen(context) - (getSidePadding(context) * 2);
     
@@ -207,12 +216,13 @@ class _ProjectsSectionState extends State<ProjectsSection>
         // Mobile: use mobileWidth (typically 1.0 for full width)
         projectWidth = assignWidth(context, data[index].mobileWidth);
       } else {
-        // Desktop/Web: calculate width to show 2 projects per row
+        // Desktop/Web: calculate width based on desired items per row
         // Account for spacing between projects - use same spacing as Wrap widget
         double spacing = assignWidth(context, 0.025);
+        int perRow = itemsPerRow.clamp(1, 4); // basic safety clamp
+        double totalSpacing = spacing * (perRow - 1);
         // Available width is screenWidth (which already accounts for side padding)
-        // For 2 items per row: (availableWidth - spacing) / 2
-        projectWidth = (screenWidth - spacing) / 2;
+        projectWidth = (screenWidth - totalSpacing) / perRow;
       }
       
       items.add(

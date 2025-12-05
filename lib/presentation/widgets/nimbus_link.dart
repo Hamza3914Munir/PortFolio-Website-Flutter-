@@ -22,7 +22,7 @@ class NimBusLink extends StatelessWidget {
       target: linkTarget,
       builder: (context, followLink) {
         return InkWell(
-          onTap: () => followLink,
+          onTap: followLink,
           child: child,
         );
       },

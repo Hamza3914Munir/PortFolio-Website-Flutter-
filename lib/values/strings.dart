@@ -11,7 +11,6 @@ class StringConst {
   static const String ABOUT = "About";
   static const String PROJECTS = "Projects";
   static const String AWARDS = "Awards";
-  static const String BLOG = "Blog";
   static const String SKILLS = "Skills";
   static const String CONTACT = "Contacts";
 
@@ -77,12 +76,29 @@ class StringConst {
   static const String SKILLS_TITLE_2 = "Skills";
   static const String SKILLS_DESC =
       "A comprehensive skill set spanning mobile development, backend services, AI/ML integration, teaching, and research. Continuously learning and applying modern development practices.";
-  static const String TOOLS_1_NAME = "Flutter/Dart";
+  // Technical & Professional skill labels (used in the skill level bars)
+  static const String TOOLS_1_NAME = "Flutter / Dart";
   static const String TOOLS_1_PROFICIENCY = "90%";
-  static const String TOOLS_2_NAME = "Firebase";
-  static const String TOOLS_2_PROFICIENCY = "85%";
-  static const String TOOLS_3_NAME = "AI/ML Integration";
+  static const String TOOLS_2_NAME = "Firebase & Supabase";
+  static const String TOOLS_2_PROFICIENCY = "90%";
+  static const String TOOLS_3_NAME = "AI / ML Integration";
   static const String TOOLS_3_PROFICIENCY = "75%";
+  static const String TOOLS_4_NAME =
+      "SQL Databases (MySQL, PostgreSQL, SQLite / Sqflite)";
+  static const String TOOLS_4_PROFICIENCY = "80%";
+  static const String TOOLS_5_NAME = "CI/CD Pipeline & Deployment";
+  static const String TOOLS_5_PROFICIENCY = "85%";
+  static const String TOOLS_6_NAME =
+      "Django / Django REST Framework (DRF)";
+  static const String TOOLS_6_PROFICIENCY = "65%";
+  static const String TOOLS_7_NAME = "Kotlin (Android)";
+  static const String TOOLS_7_PROFICIENCY = "45%";
+  static const String TOOLS_8_NAME = "Swift (iOS)";
+  static const String TOOLS_8_PROFICIENCY = "40%";
+  static const String TOOLS_9_NAME = "React Native";
+  static const String TOOLS_9_PROFICIENCY = "60%";
+  static const String TOOLS_10_NAME = "Teaching & Research";
+  static const String TOOLS_10_PROFICIENCY = "90%";
   static const String SKILLS_1 = "Mobile Development";
   static const String SKILLS_1_DESC =
       "Expert in Flutter cross-platform development with BLoC, Provider, GetX, and Riverpod. Published multiple apps on Play Store & App Store.";
@@ -119,18 +135,18 @@ class StringConst {
   static const String WEB_DESIGN = "Mobile Apps";
   static const String LIVE_PROJECTS_TITLE = "Live Projects";
   static const String LIVE_PROJECTS_DESC = "Apps published on Play Store & App Store";
-  static const String OFFLINE_PROJECTS_TITLE = "Offline / Non-Published Projects";
-  static const String OFFLINE_PROJECTS_DESC = "Projects in development or not yet published";
-  static const String PORTFOLIO_1_TITLE = "PGMart Seller";
+  static const String OFFLINE_PROJECTS_TITLE = "Featured Projects";
+  static const String OFFLINE_PROJECTS_DESC = "Projects not published yet";
+  static const String PORTFOLIO_1_TITLE = "PGMart Seller: Sell Online";
   static const String PORTFOLIO_2_TITLE = "Stora : AI Image to Story";
   static const String PORTFOLIO_3_TITLE = "Simple Habit Tracker Pro";
   static const String PORTFOLIO_4_TITLE = "PGMart: Ultimate Shopping";
-  static const String PORTFOLIO_5_TITLE = "Project 5";
-  static const String PORTFOLIO_6_TITLE = "Project 6";
-  static const String PORTFOLIO_7_TITLE = "Project 7";
-  static const String PORTFOLIO_8_TITLE = "Project 8";
-  static const String PORTFOLIO_9_TITLE = "Project 9";
-  static const String PORTFOLIO_10_TITLE = "Project 10";
+  static const String PORTFOLIO_5_TITLE = "Prayer Jammat Times ";
+  static const String PORTFOLIO_6_TITLE = "Tesla Charging Car";
+  static const String PORTFOLIO_7_TITLE = "Budget Tracker App";
+  static const String PORTFOLIO_8_TITLE = "Duesify Banking App";
+  static const String PORTFOLIO_9_TITLE = "Ventia";
+  static const String PORTFOLIO_10_TITLE = "BloodBridge AI";
 
   //Certificates & Achievements Section
   static const String MY = "My";
@@ -168,22 +184,6 @@ class StringConst {
   static const String TESTIMONIALS_2 =
       "What a fantastic day it's been at Max Nimbus! Huge shoutout to the team for connecting us all and making this amazing event possible. She bring fresh ideas and challenges to the way our industry typically markets products. This year I brought friends. Come say hi! Development is one of our values & a theme of Max Nimbus talks.";
 
-  //Blog Section
-  static const String MY_BLOG = "my blog";
-  static const String BLOG_SECTION_TITLE_1 = "Read My Own";
-  static const String BLOG_SECTION_TITLE_2 = "Blog. Be Trendy";
-  static const String BLOG_DESC =
-      "We met years ago at an advertising agency where we learned a ton of dos and some don'ts. There were project deadlines, happy hours, client proposals and a few sparks flying.";
-  static const String BLOG_VIEW_ALL = "View All";
-  static const String BLOG_CATEGORY_1 = "inspiration";
-  static const String BLOG_CATEGORY_2 = "design";
-  static const String BLOG_CATEGORY_3 = "creative";
-  static const String BLOG_DATE = "February 4, 2020";
-  static const String BLOG_TITLE_1 = "How Much Does a Website Cost to Build?";
-  static const String BLOG_TITLE_2 = "10 Tips How Create Best Packaging Design";
-  static const String BLOG_TITLE_3 = "How Get Your Visitors Love Your Brand";
-  static const String READ_MORE = "Read More";
-  static const String BLOGGING = "Blogging";
 
   //Footer Section
   static const String LETS_TALK = "Let's Talk!";
@@ -195,12 +195,8 @@ class StringConst {
   static const String RIGHTS_RESERVED = "© 2025 All rights reserved";
   static const String BUILT_BY = "Built with Flutter by";
   static const String DAVID_COBBINA = "Hamza Munir";
-  static const String DESIGNED_BY = "Designed by";
-  static const String WEB_GENIUS_LAB = "WebGeniusLab";
-  static const String MADE_IN_GHANA = "Made in";
-  static const String WITH_LOVE = "with";
+  static const String DESIGNED_BY = "Designed by Hamza Munir";
   static const String FIND_ME = "Find me on..";
-  static const String LOCATION = "Lahore, Pakistan";
 
   //URL Links
   static const String WEB_GENIUS_LAB_URL = "https://webgeniuslab.net/";

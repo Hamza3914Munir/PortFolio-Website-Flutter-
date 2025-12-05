@@ -149,14 +149,6 @@ class _AppDrawerState extends State<AppDrawer> {
               style: footerTextStyle,
               children: [
                 TextSpan(text: StringConst.DESIGNED_BY + " "),
-                TextSpan(
-                  text: StringConst.WEB_GENIUS_LAB,
-                  style: footerTextStyle?.copyWith(
-                    decoration: TextDecoration.underline,
-                    fontWeight: FontWeight.w900,
-                    color: AppColors.white,
-                  ),
-                ),
               ],
             ),
             textAlign: TextAlign.center,
@@ -184,30 +176,6 @@ class _AppDrawerState extends State<AppDrawer> {
           ],
         ),
         SpaceH4(),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(StringConst.MADE_IN_GHANA, style: footerTextStyle),
-            SpaceW4(),
-            ClipRRect(
-              borderRadius: BorderRadius.all(const Radius.circular(20)),
-              child: Image.asset(
-                ImagePath.GHANA_FLAG,
-                width: Sizes.WIDTH_16,
-                height: Sizes.HEIGHT_16,
-                fit: BoxFit.cover,
-              ),
-            ),
-            SpaceW4(),
-            Text(StringConst.WITH_LOVE, style: footerTextStyle),
-            SpaceW4(),
-            Icon(
-              FontAwesomeIcons.solidHeart,
-              color: AppColors.red,
-              size: Sizes.ICON_SIZE_12,
-            ),
-          ],
-        ),
       ],
     );
   }

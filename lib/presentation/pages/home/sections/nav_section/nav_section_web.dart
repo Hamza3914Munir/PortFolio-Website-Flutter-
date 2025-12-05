@@ -162,14 +162,6 @@ class _NavSectionWebState extends State<NavSectionWeb> {
           
           onPressed: () => openUrlLink(socialItems[index].url),
         ),
-        // NimBusLink(
-        //   url: socialItems[index].url,
-        //   child: SocialButton(
-        //     tag: socialItems[index].tag,
-        //     iconData: socialItems[index].iconData,
-        //     onPressed: (){},
-        //   ),
-        // ),
       );
       items.add(SpaceW16());
     }

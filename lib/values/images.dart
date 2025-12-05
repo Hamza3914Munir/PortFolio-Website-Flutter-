@@ -4,7 +4,6 @@ class ImagePath {
   //images route
   static const String imageDir = "assets/images";
   static const String screenshotsDir = "assets/screenshots";
-
   // Logo
   static const String LOGO_DARK = "$imageDir/logo_dark.png";
   static const String LOGO_LIGHT = "$imageDir/logo_light.png";
@@ -32,16 +31,16 @@ class ImagePath {
   static const String DEV_AWARD = "$imageDir/dev_award.png";
   static const String GHANA_FLAG = "$imageDir/ghana_flag.png";
 
-  // Blog Images
-  static const String BLOG_01 = "$imageDir/blog_01.jpg";
-  static const String BLOG_02 = "$imageDir/blog_02.jpg";
-  static const String BLOG_03 = "$imageDir/blog_03.jpg";
 
   // Portfolio Images
-  static const String PORTFOLIO_1 = "$imageDir/portfolio_01.jpg";
+  static const String PORTFOLIO_1 = "$imageDir/portfolio_04.jpg";
   static const String PORTFOLIO_2 = "$imageDir/portfolio_02.jpg";
   static const String PORTFOLIO_3 = "$imageDir/portfolio_03.jpg";
-  static const String PORTFOLIO_4 = "$imageDir/portfolio_04.jpg";
+  static const String PORTFOLIO_4 = "$imageDir/portfolio_01.jpg";
   static const String PORTFOLIO_5 = "$imageDir/portfolio_05.jpg";
   static const String PORTFOLIO_6 = "$imageDir/portfolio_06.jpg";
+  static const String PORTFOLIO_7 = "$imageDir/portfolio_07.jpg";
+  static const String PORTFOLIO_8 = "$imageDir/portfolio_08.jpg";
+  static const String PORTFOLIO_9 = "$imageDir/portfolio_09.jpg";
+  static const String PORTFOLIO_10 = "$imageDir/portfolio_10.jpg";
 }

@@ -3,7 +3,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nimbus/presentation/layout/adaptive.dart';
 import 'package:nimbus/presentation/pages/home/sections/about_me_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/awards_section.dart';
-import 'package:nimbus/presentation/pages/home/sections/blog_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/footer_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/header_section/header_section.dart';
 import 'package:nimbus/presentation/pages/home/sections/nav_section/nav_section_mobile.dart';
@@ -47,7 +46,6 @@ class _HomePageState extends State<HomePage>
     NavItemData(name: StringConst.SKILLS, key: GlobalKey()),
     NavItemData(name: StringConst.PROJECTS, key: GlobalKey()),
     NavItemData(name: StringConst.AWARDS, key: GlobalKey()),
-    NavItemData(name: StringConst.BLOG, key: GlobalKey()),
   ];
 
   @override
@@ -198,11 +196,6 @@ class _HomePageState extends State<HomePage>
                           Container(
                             key: navItems[4].key,
                             child: AwardsSection(),
-                          ),
-                          SpaceH40(),
-                          Container(
-                            key: navItems[5].key,
-                            child: BlogSection(),
                           ),
                           FooterSection(),
                         ],

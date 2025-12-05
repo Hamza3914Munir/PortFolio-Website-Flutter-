@@ -75,48 +75,16 @@ class _FooterSectionState extends State<FooterSection> {
             },
           ),
           SpaceH20(),
-          InkWell(
-            onTap: () => openUrlLink(StringConst.WEB_GENIUS_LAB_URL),
-            child: RichText(
+           RichText(
               text: TextSpan(
                 text: StringConst.RIGHTS_RESERVED + " ",
                 style: footerTextStyle,
                 children: [
                   TextSpan(text: StringConst.DESIGNED_BY + " "),
-                  TextSpan(
-                    text: StringConst.WEB_GENIUS_LAB,
-                    style: footerTextStyle?.copyWith(
-                      decoration: TextDecoration.underline,
-                      fontWeight: FontWeight.w900,
-                      color: AppColors.black,
-                    ),
-                  ),
                 ],
               ),
               textAlign: TextAlign.center,
             ),
-          ),
-          // NimBusLink(
-          //   url: StringConst.WEB_GENIUS_LAB_URL,
-          //   child: RichText(
-          //     text: TextSpan(
-          //       text: StringConst.RIGHTS_RESERVED + " ",
-          //       style: footerTextStyle,
-          //       children: [
-          //         TextSpan(text: StringConst.DESIGNED_BY + " "),
-          //         TextSpan(
-          //           text: StringConst.WEB_GENIUS_LAB,
-          //           style: footerTextStyle?.copyWith(
-          //             decoration: TextDecoration.underline,
-          //             fontWeight: FontWeight.w900,
-          //             color: AppColors.black,
-          //           ),
-          //         ),
-          //       ],
-          //     ),
-          //     textAlign: TextAlign.center,
-          //   ),
-          // ),
           SpaceH4(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -169,19 +137,6 @@ class _FooterSectionState extends State<FooterSection> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(StringConst.MADE_IN_GHANA, style: footerTextStyle),
-              SpaceW4(),
-              ClipRRect(
-                borderRadius: BorderRadius.all(const Radius.circular(20)),
-                child: Image.asset(
-                  ImagePath.GHANA_FLAG,
-                  width: Sizes.WIDTH_16,
-                  height: Sizes.HEIGHT_16,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              SpaceW4(),
-              Text(StringConst.WITH_LOVE, style: footerTextStyle),
               SpaceW4(),
               Icon(
                 FontAwesomeIcons.solidHeart,

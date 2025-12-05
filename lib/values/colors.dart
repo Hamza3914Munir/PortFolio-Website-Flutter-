@@ -53,4 +53,23 @@ class AppColors {
   static const Color grey350 = Color(0xFFADADAD);
   //Red
   static const Color red = Color(0xFFF1291A);
+  static const Color red300 = Color(0xFFE53935);
+  
+  //Green
+  static const Color green300 = Color(0xFF4CAF50);
+  
+  //Orange
+  static const Color orange300 = Color(0xFFFF9800);
+  
+  //Teal
+  static const Color teal300 = Color(0xFF4DB6AC);
+  
+  //Indigo
+  static const Color indigo300 = Color(0xFF7986CB);
+  
+  //Purple
+  static const Color purple300 = Color(0xFFBA68C8);
+  
+  //Blue shades
+  static const Color blue400 = Color(0xFF1976D2);
 }
