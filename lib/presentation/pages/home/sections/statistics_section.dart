@@ -202,7 +202,7 @@ class StatItem extends StatelessWidget {
     return Column(
       children: [
         Text(
-          "$value",
+          "$value+",
           style: titleStyle ??
               textTheme.headline3?.copyWith(
                 color: titleColor,

@@ -120,49 +120,62 @@ List<Widget> buildCardRow({
     md: Sizes.ICON_SIZE_30,
   );
   for (int index = 0; index < data.length; index++) {
+    // Simpler, stable card tile to avoid SelectableText/Flexible layout issues on web
     items.add(
-      NimBusCard(
+      Container(
         width: width,
-        height: responsiveSize(
-          context,
-          125,
-          140,
-        ),
-        hasAnimation: hasAnimation,
-        leading: CircularContainer(
-          width: cardWidth,
-          height: cardWidth,
-          iconSize: iconSize,
-          backgroundColor: data[index].circleBgColor,
-          iconColor: data[index].leadingIconColor,
-        ),
-        title: Flexible(
-          child: SelectableText(
-            data[index].title,
-            style: textTheme.subtitle1?.copyWith(
-              fontSize: responsiveSize(
-                context,
-                Sizes.TEXT_SIZE_16,
-                Sizes.TEXT_SIZE_18,
-              ),
+        height: responsiveSize(context, 125, 140),
+        child: Card(
+          elevation: Sizes.ELEVATION_4,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Sizes.RADIUS_12)),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: Sizes.PADDING_12, vertical: Sizes.PADDING_12),
+            child: Row(
+              children: [
+                CircularContainer(
+                  width: cardWidth,
+                  height: cardWidth,
+                  iconSize: iconSize,
+                  backgroundColor: data[index].circleBgColor,
+                  iconColor: data[index].leadingIconColor,
+                ),
+                SizedBox(width: Sizes.WIDTH_16),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        data[index].title,
+                        style: textTheme.subtitle1?.copyWith(
+                          fontSize: responsiveSize(context, Sizes.TEXT_SIZE_16, Sizes.TEXT_SIZE_18),
+                          fontWeight: FontWeight.w600,
+                        ),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      SizedBox(height: Sizes.HEIGHT_8),
+                      Text(
+                        data[index].subtitle,
+                        style: textTheme.bodyText1?.copyWith(
+                          fontSize: responsiveSize(context, Sizes.TEXT_SIZE_14, Sizes.TEXT_SIZE_16),
+                          color: AppColors.grey350,
+                        ),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(width: Sizes.WIDTH_12),
+                Icon(
+                  Icons.chevron_right,
+                  size: trailingIconSize,
+                  color: data[index].trailingIconColor,
+                ),
+              ],
             ),
           ),
-        ),
-        subtitle: Flexible(
-          child: SelectableText(
-            data[index].subtitle,
-            style: textTheme.bodyText1?.copyWith(
-                fontSize: responsiveSize(
-              context,
-              Sizes.TEXT_SIZE_14,
-              Sizes.TEXT_SIZE_16,
-            )),
-          ),
-        ),
-        trailing: Icon(
-          Icons.chevron_right,
-          size: trailingIconSize,
-          color: data[index].trailingIconColor,
         ),
       ),
     );

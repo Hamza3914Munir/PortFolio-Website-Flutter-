@@ -52,9 +52,19 @@ class _AppDrawerState extends State<AppDrawer> {
                 children: [
                   InkWell(
                     onTap: () {},
-                    child: Image.asset(
-                      ImagePath.LOGO_LIGHT,
-                      height: Sizes.HEIGHT_52,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                      decoration: BoxDecoration(
+                        color: AppColors.primaryColor,
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: Text(
+                        'HM',
+                        style: Theme.of(context).textTheme.headline6?.copyWith(
+                          color: AppColors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ),
                   Spacer(),
@@ -165,7 +175,6 @@ class _AppDrawerState extends State<AppDrawer> {
                   TextSpan(
                     text: StringConst.DAVID_COBBINA + ". ",
                     style: footerTextStyle?.copyWith(
-                      decoration: TextDecoration.underline,
                       fontWeight: FontWeight.w900,
                       color: AppColors.white,
                     ),

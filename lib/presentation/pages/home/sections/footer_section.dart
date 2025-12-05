@@ -91,44 +91,21 @@ class _FooterSectionState extends State<FooterSection> {
             children: [
               Expanded(
                 child: Center(
-                  child:InkWell(
-                    onTap: () => openUrlLink(StringConst.DAVID_LEGEND_URL),
-                    child: RichText(
-                      text: TextSpan(
-                        text: StringConst.BUILT_BY + " ",
-                        style: footerTextStyle,
-                        children: [
-                          TextSpan(
-                            text: StringConst.DAVID_COBBINA + ". ",
-                            style: footerTextStyle?.copyWith(
-                              decoration: TextDecoration.underline,
-                              fontWeight: FontWeight.w900,
-                              color: AppColors.black,
-                            ),
+                  child: RichText(
+                    text: TextSpan(
+                      text: StringConst.BUILT_BY + " ",
+                      style: footerTextStyle,
+                      children: [
+                        TextSpan(
+                          text: StringConst.DAVID_COBBINA + ". ",
+                          style: footerTextStyle?.copyWith(
+                            fontWeight: FontWeight.w900,
+                            color: AppColors.black,
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
-                  //  NimBusLink(
-                  //   url: StringConst.DAVID_LEGEND_URL,
-                  //   child: RichText(
-                  //     text: TextSpan(
-                  //       text: StringConst.BUILT_BY + " ",
-                  //       style: footerTextStyle,
-                  //       children: [
-                  //         TextSpan(
-                  //           text: StringConst.DAVID_COBBINA + ". ",
-                  //           style: footerTextStyle?.copyWith(
-                  //             decoration: TextDecoration.underline,
-                  //             fontWeight: FontWeight.w900,
-                  //             color: AppColors.black,
-                  //           ),
-                  //         ),
-                  //       ],
-                  //     ),
-                  //   ),
-                  // ),
                 ),
               ),
             ],
@@ -223,10 +200,10 @@ class _FooterSectionState extends State<FooterSection> {
                   SpaceH60(),
                   ..._buildFooterItems(footerItems),
                   SpaceH60(),
-                  NimbusButton(
+                  NimBusButtonLink(
+                    url: StringConst.HIRE_ME_FORM_URL,
                     buttonTitle: StringConst.HIRE_ME,
                     buttonColor: AppColors.primaryColor,
-                    onPressed: () {},
                   ),
                   SpaceH80(),
                 ],

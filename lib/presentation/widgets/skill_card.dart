@@ -73,25 +73,39 @@ class _SkillCardState extends State<SkillCard> {
       child: Container(
         key: Key("default"),
         child: widget.child ??
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CircularContainer(
-                  backgroundColor: widget.iconBackgroundColor,
-                  padding: const EdgeInsets.all(16),
-                  borderRadius: const BorderRadius.all(Radius.circular(40)),
-                  iconData: widget.iconData,
-                  iconColor: widget.iconColor,
-                  iconSize: widget.iconSize,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 1.0, vertical: 8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    CircularContainer(
+                      backgroundColor: widget.iconBackgroundColor,
+                      padding: const EdgeInsets.all(16),
+                      borderRadius: const BorderRadius.all(Radius.circular(4)),
+                      iconData: widget.iconData,
+                      iconColor: widget.iconColor,
+                      iconSize: widget.iconSize,
+                    ),
+                    SpaceH12(),
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        return ConstrainedBox(
+                          constraints: BoxConstraints(maxWidth: constraints.maxWidth),
+                          child: Text(
+                            widget.title,
+                            textAlign: TextAlign.center,
+                            softWrap: true,
+                            maxLines: 2,
+                            // overflow: TextOverflow.ellipsis,
+                            style: widget.titleStyle ?? textTheme.subtitle1,
+                          ),
+                        );
+                      },
+                    ),
+                  ],
                 ),
-                SpaceH12(),
-                SelectableText(
-                  widget.title,
-                  textAlign: TextAlign.center,
-                  style: widget.titleStyle ?? textTheme.subtitle1,
-                ),
-              ],
-            ),
+              ),
       ),
     );
   }
@@ -117,20 +131,32 @@ class _SkillCardState extends State<SkillCard> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    widget.title,
-                    style: widget.titleStyle ??
-                        textTheme.subtitle1?.copyWith(
-                          color: AppColors.white,
-                        ),
+                  Flexible(
+                    child: Text(
+                      widget.title,
+                      textAlign: TextAlign.center,
+                      softWrap: true,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: widget.titleStyle ??
+                          textTheme.subtitle1?.copyWith(
+                            color: AppColors.white,
+                          ),
+                    ),
                   ),
                   SpaceH8(),
-                  Text(
-                    widget.description,
-                    style: widget.descriptionStyle ??
-                        textTheme.bodyText2?.copyWith(
-                          color: AppColors.primaryText1,
-                        ),
+                  Flexible(
+                    child: Text(
+                      widget.description,
+                      textAlign: TextAlign.center,
+                      softWrap: true,
+                      maxLines: 4,
+                      overflow: TextOverflow.ellipsis,
+                      style: widget.descriptionStyle ??
+                          textTheme.bodyText2?.copyWith(
+                            color: AppColors.primaryText1,
+                          ),
+                    ),
                   ),
                 ],
               ),

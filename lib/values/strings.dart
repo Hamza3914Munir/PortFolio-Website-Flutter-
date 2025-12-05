@@ -12,11 +12,15 @@ class StringConst {
   static const String PROJECTS = "Projects";
   static const String AWARDS = "Awards";
   static const String SKILLS = "Skills";
+  static const String WORK_EXPERIENCE = "Experience";
+  static const String EDUCATION = "Education";
   static const String CONTACT = "Contacts";
 
   static const String CONTACT_ME = "Contact Me";
   static const String DEV_EMAIL = "hamzamuni3914@gmail.com";
   static const String EMAIL_URL = "mailto:hamzamuni3914@gmail.com?subject=&body=";
+  static const String GMAIL_URL = "https://mail.google.com/mail/?view=cm&fs=1&to=hamzamuni3914@gmail.com";
+  static const String MAILTO_SCHEME = "mailto:hamzamuni3914@gmail.com";
 
   //Header Section
   static const String FIRST_NAME = "Hamza";
@@ -116,11 +120,11 @@ class StringConst {
   static const String HAPPY_CLIENTS = "Clients Worldwide";
   static const String HAPPY_CLIENTS_NUM = "25";
   static const String YEARS_OF_EXPERIENCE = "Years of Experience";
-  static const String YEARS_OF_EXPERIENCE_NUM = "2";
+  static const String YEARS_OF_EXPERIENCE_NUM = "2+";
   static const String INCREDIBLE_PROJECTS = "Projects Completed";
-  static const String INCREDIBLE_PROJECTS_NUM = "30";
+  static const String INCREDIBLE_PROJECTS_NUM = "30+";
   static const String AWARD_WINNING = "Certificates";
-  static const String AWARD_WINNING_NUM = "5";
+  static const String AWARD_WINNING_NUM = "5+";
 
   //Projects Section
   static const String MEET_MY_PROJECTS = "Meet My Projects";
@@ -211,4 +215,10 @@ class StringConst {
   static const String DAVID_LEGEND_URL = "https://davidcobbina.com/#/";
   static const String DESIGN_URL =
       "https://www.behance.net/gallery/95351691/Resume-Design-03";
+  
+  // New URLs for Hamza's portfolio
+  static const String DOWNLOAD_CV_URL = "https://drive.google.com/file/d/11Bld_OhSGFK9__Hti81wTmU_-R7m_kE6/view?usp=sharing";
+  static const String HIRE_ME_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdsS96sTXWdTqV-PF3-KP5z8ipOkAR3IQX97CegQT1mlF_jbQ/viewform?usp=dialog";
+  static const String WHATSAPP_NUMBER = "+923051882278";
+  static const String WHATSAPP_MESSAGE = "Hi Hamza, I would like to discuss a project with you.";
 }

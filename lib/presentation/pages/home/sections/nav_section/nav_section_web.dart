@@ -76,9 +76,19 @@ class _NavSectionWebState extends State<NavSectionWeb> {
             SizedBox(width: logoSpaceLeft),
             InkWell(
               onTap: () {},
-              child: Image.asset(
-                ImagePath.LOGO_DARK,
-                height: Sizes.HEIGHT_52,
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                decoration: BoxDecoration(
+                  color: AppColors.primaryColor,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Text(
+                  'HM',
+                  style: Theme.of(context).textTheme.headline6?.copyWith(
+                    color: AppColors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ),
             SizedBox(width: logoSpaceRight),
@@ -107,9 +117,8 @@ class _NavSectionWebState extends State<NavSectionWeb> {
              NimbusButton(
               buttonTitle: StringConst.CONTACT_ME,
               width: contactBtnWidth,
-              // onPressed: () => openUrlLink(StringConst.EMAIL_URL),
               opensUrl: true,
-              url: StringConst.EMAIL_URL,
+              url: StringConst.MAILTO_SCHEME,
             ),
             SizedBox(width: contactBtnSpaceRight),
           ],

@@ -33,6 +33,18 @@ class _WorkExperienceSectionState extends State<WorkExperienceSection>
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Ensure content is visible on mobile even if VisibilityDetector doesn't fire immediately.
+    // Start the animation so users on small screens see the section.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        _controller.forward();
+      }
+    });
+  }
+
+  @override
   void dispose() {
     _controller.dispose();
     super.dispose();
@@ -135,12 +147,28 @@ class _WorkExperienceSectionState extends State<WorkExperienceSection>
   Widget _buildExperienceCard(WorkExperienceData experience, int index) {
     TextTheme textTheme = Theme.of(context).textTheme;
     return Card(
-      elevation: Sizes.ELEVATION_4,
+      elevation: 8,
+      shadowColor: AppColors.primaryColor.withOpacity(0.3),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(Sizes.RADIUS_12),
+        side: BorderSide(
+          color: AppColors.primaryColor.withOpacity(0.1),
+          width: 1,
+        ),
       ),
       child: Container(
         padding: EdgeInsets.all(Sizes.PADDING_24),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(Sizes.RADIUS_12),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              AppColors.white,
+              AppColors.white.withOpacity(0.95),
+            ],
+          ),
+        ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -150,6 +178,13 @@ class _WorkExperienceSectionState extends State<WorkExperienceSection>
               decoration: BoxDecoration(
                 color: AppColors.primaryColor,
                 borderRadius: BorderRadius.circular(Sizes.RADIUS_8),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.primaryColor.withOpacity(0.3),
+                    blurRadius: 8,
+                    offset: Offset(0, 4),
+                  ),
+                ],
               ),
               child: Icon(
                 experience.icon,
@@ -166,6 +201,7 @@ class _WorkExperienceSectionState extends State<WorkExperienceSection>
                     experience.position,
                     style: textTheme.headline6?.copyWith(
                       fontWeight: FontWeight.bold,
+                      color: AppColors.black,
                     ),
                   ),
                   SpaceH8(),
@@ -173,6 +209,7 @@ class _WorkExperienceSectionState extends State<WorkExperienceSection>
                     experience.company,
                     style: textTheme.subtitle1?.copyWith(
                       color: AppColors.primaryColor,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                   SpaceH8(),
@@ -201,7 +238,9 @@ class _WorkExperienceSectionState extends State<WorkExperienceSection>
                           Expanded(
                             child: Text(
                               responsibility,
-                              style: textTheme.bodyText2,
+                              style: textTheme.bodyText2?.copyWith(
+                                color: AppColors.black400,
+                              ),
                             ),
                           ),
                         ],

@@ -35,9 +35,20 @@ class NavSectionMobile extends StatelessWidget {
           Spacer(),
           InkWell(
             onTap: () {},
-            child: Image.asset(
-              ImagePath.LOGO_LIGHT,
-              height: Sizes.HEIGHT_52,
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              decoration: BoxDecoration(
+                color: AppColors.primaryColor,
+                borderRadius: BorderRadius.circular(6),
+              ),
+              child: Text(
+                'HM',
+                style: Theme.of(context).textTheme.headline6?.copyWith(
+                  color: AppColors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
+                ),
+              ),
             ),
           ),
           Spacer(),

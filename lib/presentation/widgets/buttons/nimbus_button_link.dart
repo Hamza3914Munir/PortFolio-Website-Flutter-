@@ -36,7 +36,7 @@ class NimBusButtonLink extends StatelessWidget {
           height: height,
           buttonTitle: buttonTitle,
           buttonColor: buttonColor,
-          onPressed: () => followLink,
+          onPressed: followLink,
         );
       },
     );
