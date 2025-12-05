@@ -259,10 +259,10 @@ class ProjectCover extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          AnimatedHoverIndicator2(
-            animation: animation,
-            indicatorColor: indicatorColor,
-          ),
+          // AnimatedHoverIndicator2(
+          //   animation: animation,
+          //   indicatorColor: indicatorColor,
+          // ),
           SpaceW16(),
           Expanded(
             child: Column(
