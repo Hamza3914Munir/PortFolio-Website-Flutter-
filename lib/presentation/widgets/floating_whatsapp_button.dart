@@ -1,8 +1,8 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:nimbus/utils/functions.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:nimbus/values/values.dart';
-import 'dart:io';
 
 class FloatingWhatsAppButton extends StatelessWidget {
   final String phoneNumber;
@@ -14,36 +14,55 @@ class FloatingWhatsAppButton extends StatelessWidget {
     required this.message,
   }) : super(key: key);
 
-  void _launchWhatsApp() async {
-    String url;
-    
-    // Remove any special characters from phone number for WhatsApp format
-    String cleanPhone = phoneNumber.replaceAll(RegExp(r'[^\d+]'), '');
-    String encodedMessage = Uri.encodeComponent(message);
-    
-    if (Platform.isAndroid) {
-      // For Android: Use WhatsApp scheme
-      url = "https://wa.me/$cleanPhone?text=$encodedMessage";
-    } else if (Platform.isIOS) {
-      // For iOS: Use WhatsApp scheme
-      url = "https://wa.me/$cleanPhone?text=$encodedMessage";
-    } else {
-      // For web
-      url = "https://wa.me/$cleanPhone?text=$encodedMessage";
-    }
-
+  Future<void> _launchWhatsApp() async {
     try {
-      await openUrlLink(url);
+      // Remove any special characters from phone number except + and digits
+      String cleanPhone = phoneNumber.replaceAll(RegExp(r'[^\d+]'), '');
+
+      // Ensure phone number starts with country code (+ sign)
+      if (!cleanPhone. startsWith('+')) {
+        cleanPhone = '+$cleanPhone';
+      }
+
+      String encodedMessage = Uri.encodeComponent(message);
+
+      // Unified URL that works across all platforms (mobile, desktop, web)
+      final String whatsappUrl = "https://wa.me/$cleanPhone?text=$encodedMessage";
+
+      // Convert to Uri for proper handling
+      final Uri url = Uri.parse(whatsappUrl);
+
+      // Check if the URL can be launched
+      if (await canLaunchUrl(url)) {
+        // Launch with mode that works on all platforms
+        await launchUrl(
+          url,
+          mode: LaunchMode.externalApplication, // Opens in WhatsApp app or web
+        );
+      } else {
+        // Fallback: Try without mode parameter
+        if (await canLaunchUrl(url)) {
+          await launchUrl(url);
+        } else {
+          throw 'Could not launch WhatsApp';
+        }
+      }
     } catch (e) {
       print('Error launching WhatsApp: $e');
+      _showErrorDialog('Unable to open WhatsApp.  Please try again.');
     }
+  }
+
+  void _showErrorDialog(String message) {
+    // Show error message to user (you can customize this)
+    print(message);
   }
 
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: 30,
-      right: 30,
+      bottom: 90,
+      right: 15,
       child: Container(
         decoration: BoxDecoration(
           shape: BoxShape.circle,
@@ -51,16 +70,16 @@ class FloatingWhatsAppButton extends StatelessWidget {
             BoxShadow(
               color: Colors.black.withOpacity(0.3),
               blurRadius: 10,
-              offset: Offset(0, 4),
+              offset: const Offset(0, 4),
             ),
           ],
         ),
         child: FloatingActionButton(
           onPressed: _launchWhatsApp,
-          backgroundColor: Color(0xFF25D366), // WhatsApp green color
-          child: Icon(
+          backgroundColor: const Color(0xFF25D366), // WhatsApp green color
+          child: const Icon(
             FontAwesomeIcons.whatsapp,
-            color: Colors.white,
+            color: Colors. white,
             size: 28,
           ),
           heroTag: 'whatsapp_fab',

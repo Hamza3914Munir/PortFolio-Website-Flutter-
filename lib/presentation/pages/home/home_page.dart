@@ -21,6 +21,8 @@ import 'package:nimbus/values/values.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
+import '../../widgets/floating_gmail_button.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -225,6 +227,10 @@ class _HomePageState extends State<HomePage>
           phoneNumber: StringConst.WHATSAPP_NUMBER,
           message: StringConst.WHATSAPP_MESSAGE,
         ),
+        FloatingGmailButton(
+          gmailAddress: 'hamzamunir3914@gmail.com',
+          subject: 'Hello from Portfolio',
+        )
       ],
     );
   }
