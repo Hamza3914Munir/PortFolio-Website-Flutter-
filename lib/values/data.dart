@@ -137,12 +137,6 @@ class Data {
       url: StringConst.YOUTUBE_URL,
     ),
     AwardItemData(
-      title: StringConst.AWARDS_4,
-      icon: Icons.school,
-      iconColor: AppColors.green300,
-      url: "https://github.com/Hamza3914Munir/Certificates",
-    ),
-    AwardItemData(
       title: StringConst.AWARDS_5,
       icon: Icons.store,
       iconColor: AppColors.purple300,
@@ -150,6 +144,12 @@ class Data {
     ),
   ];
   static List<AwardItemData> awards2 = [
+    AwardItemData(
+      title: StringConst.AWARDS_4,
+      icon: Icons.school,
+      iconColor: AppColors.green300,
+      url: "https://github.com/Hamza3914Munir/Certificates",
+    ),
     AwardItemData(
       title: StringConst.AWARDS_6,
       icon: Icons.phone_android,
@@ -166,18 +166,6 @@ class Data {
       title: StringConst.AWARDS_8,
       icon: Icons.psychology,
       iconColor: AppColors.pink300,
-      url: "https://github.com/Hamza3914Munir/Certificates",
-    ),
-    AwardItemData(
-      title: StringConst.AWARDS_9,
-      icon: Icons.architecture,
-      iconColor: AppColors.teal300,
-      url: "https://github.com/Hamza3914Munir/Certificates",
-    ),
-    AwardItemData(
-      title: StringConst.AWARDS_10,
-      icon: Icons.devices,
-      iconColor: AppColors.indigo300,
       url: "https://github.com/Hamza3914Munir/Certificates",
     ),
   ];

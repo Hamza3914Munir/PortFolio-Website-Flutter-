@@ -164,13 +164,11 @@ class StringConst {
   static const String AWARDS_1 = "FYP Selected for Punjab HEC Expo 2025";
   static const String AWARDS_2 = "Research Paper Co-Author (pakPOL)";
   static const String AWARDS_3 = "YouTube Content Creator";
-  static const String AWARDS_4 = "Mobile App Development Certificate (UMT)";
+  static const String AWARDS_4 = "Mobile App Development with Flutter — UMT Lahore";
   static const String AWARDS_5 = "Published Apps on Play Store & App Store";
-  static const String AWARDS_6 = "Flutter Development Certificate";
-  static const String AWARDS_7 = "Firebase Integration Specialist";
-  static const String AWARDS_8 = "AI/ML Integration Certificate";
-  static const String AWARDS_9 = "Clean Architecture Practitioner";
-  static const String AWARDS_10 = "Cross-Platform Development Expert";
+  static const String AWARDS_6 = "Flutter Development Certificate — IIFA Tech";
+  static const String AWARDS_7 = "AI/ML Integration Certificate — Coursera";
+  static const String AWARDS_8 = "Flutter Developer & Intern Leader — ZAM Studios";
 
   //Brands Section
   static const String BRANDS_SECTION_TITLE = "Brands I've worked with";
@@ -217,7 +215,7 @@ class StringConst {
       "https://www.behance.net/gallery/95351691/Resume-Design-03";
   
   // New URLs for Hamza's portfolio
-  static const String DOWNLOAD_CV_URL = "https://drive.google.com/file/d/11Bld_OhSGFK9__Hti81wTmU_-R7m_kE6/view?usp=sharing";
+  static const String DOWNLOAD_CV_URL = "https://drive.google.com/file/d/1yq5dYpWWraHMIzQST5uCv-Iq9zLBKJHQ/view?usp=sharing";
   static const String HIRE_ME_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdsS96sTXWdTqV-PF3-KP5z8ipOkAR3IQX97CegQT1mlF_jbQ/viewform?usp=dialog";
   static const String WHATSAPP_NUMBER = "+923051882278";
   static const String WHATSAPP_MESSAGE = "Hi Hamza, I would like to discuss a project with you.";
