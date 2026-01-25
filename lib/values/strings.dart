@@ -215,7 +215,7 @@ class StringConst {
       "https://www.behance.net/gallery/95351691/Resume-Design-03";
   
   // New URLs for Hamza's portfolio
-  static const String DOWNLOAD_CV_URL = "https://drive.google.com/file/d/1yq5dYpWWraHMIzQST5uCv-Iq9zLBKJHQ/view?usp=sharing";
+  static const String DOWNLOAD_CV_URL = "https://drive.google.com/file/d/1hTmkV_z6x9vlzSPijf2kq51VerjiVMV7/view?usp=sharing";
   static const String HIRE_ME_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdsS96sTXWdTqV-PF3-KP5z8ipOkAR3IQX97CegQT1mlF_jbQ/viewform?usp=dialog";
   static const String WHATSAPP_NUMBER = "+923051882278";
   static const String WHATSAPP_MESSAGE = "Hi Hamza, I would like to discuss a project with you.";
